@@ -1,0 +1,58 @@
+#Programa que lê 6 valores inteiros e os imprime
+print([int(input('Digite um valor: ')) for valores in range(6)])
+
+#exercicio 3 - secao 7/parte 1
+vetor=list(map(lambda x: x**2, [float(input('Digite um valor: ')) for valor in range(10)]))
+print(vetor)
+
+#exercicio 4 - secao 7/parte 1
+vetor=[int(input('Digite um valor: ')) for valor in range(8)]
+x=int(input('Insira uma posição: '))
+y=int(input('Insira outra posição: '))
+print(vetor[x]+vetor[y])
+
+#exercicio 5 - secao 7/parte 1
+vetor=filter(lambda x:x%2==0, [int(input('Digite um valor: ')) for valor in range(10)])
+print(list(vetor))
+
+#exercicio 6 - secao 7/parte 1
+vetor=[int(input('Digite um valor: ')) for valor in range(10)]
+print(max(vetor))
+print(min(vetor))
+
+#exercicio 7 - secao 7/parte 1
+vetor=[int(input('Digite um valor: ')) for valor in range(10)]
+maior=max(vetor)
+posicao=vetor.index(maior)
+print(f'O maior valor é {maior} e está na posição {posicao}')
+
+#exercicio 8 - secao 7/parte 1
+vetor = reversed([int(input('Digite o valor: ')) for valor in range(6)])
+print(list(vetor))
+
+#exercicio 10 - secao 7/parte 1
+import statistics
+print(statistics.mean([float(input(f'Coloque a nota do aluno {nota+1} ')) for nota in range(15)]))
+
+#exercício 11 - secao 7/parte 1
+vetor=[float(input('Digite um valor: ')) for valor in range(10)]
+print(len(list(filter(lambda x:x<0, vetor))))
+print(sum(list(filter(lambda x:x>0, vetor))))
+
+#exercício 14 - secao 7/parte 1
+vetor=[int(input('Digite um valor: ')) for valor in range(10)]
+print(set(filter(lambda x: vetor.count(x)>1, vetor)))
+
+#exercício 15 - secao 7/parte 1
+vetor=[int(input('Digite um valor: ')) for valor in range(20)]
+print(list(filter(lambda x:vetor.count(x)<=1, vetor)))
+
+#exercício 18 - secao 7/parte 1
+vetor=[int(input('Digite um valor: ')) for valor in range(10)]
+x=int(input('Digite o múltiplo: '))
+conjunto=list(filter(lambda y:y%x==0,vetor))
+print(len(conjunto))
+print(conjunto)
+
+#exercício 19 -secao 7/parte1
+print([(x+5*x)%(x+1) for x in range(50)])
