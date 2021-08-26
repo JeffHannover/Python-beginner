@@ -1,4 +1,5 @@
-#Programa que lê 6 valores inteiros e os imprime
+"""
+#exercicio 2 - secao 7/parte 1
 print([int(input('Digite um valor: ')) for valores in range(6)])
 
 #exercicio 3 - secao 7/parte 1
@@ -54,5 +55,252 @@ conjunto=list(filter(lambda y:y%x==0,vetor))
 print(len(conjunto))
 print(conjunto)
 
-#exercício 19 -secao 7/parte1
+#exercício 19 -secao 7/parte 1
 print([(x+5*x)%(x+1) for x in range(50)])
+
+#exercício 20 - secao 7/parte 1
+vetor=[]
+
+while len(vetor)<10:
+    x=int(input('Digite um valor no intervalo [0,50]: '))
+    while x not in range(51):
+        x=int(input('O valor precisa estar no intervalo [0,50], tente novamente: '))
+    vetor.append(x)
+
+impares=list(filter(lambda x:x%2!=0, vetor))
+
+print(vetor)
+print(impares)
+
+#exercício 21 - secao 7/parte 1
+A=[int(input(f'Digite o valor {x+1} do vetor A: ')) for x in range(10)]
+B=[int(input(f'Digite o valor {x+1} do vetor B: ')) for x in range(10)]
+C=list(map(lambda x,y:x-y, A,B))
+print(f'A: {A}')
+print(f'B: {B}')
+print(f'C: {C}')
+
+#exercício 22 - secao 7/parte 1
+A=[int(input(f'Digite o valor {x+1} do vetor A: ')) for x in range(10)]
+B=[int(input(f'Digite o valor {x+1} do vetor B: ')) for x in range(10)]
+C=list(map(lambda x,y,z: x if z%2==0 else y, A,B,range(10)))
+print(f'A: {A}')
+print(f'B: {B}')
+print(f'C: {C}')
+
+#exercício 23 - secao 7/parte 1
+A=[int(input(f'Digite o valor {x+1} do vetor A: ')) for x in range(5)]
+B=[int(input(f'Digite o valor {x+1} do vetor B: ')) for x in range(5)]
+C=list(map(lambda x,y: x*y, A,B))
+print(f'A: {A}')
+print(f'B: {B}')
+print(f'produto escalar: {sum(C)}')
+
+#exercício 24 - secao 7/parte1
+nomes=[input(f'Digite o nome do aluno {x+1}: ') for x in range(10)]
+altura=[float(input(f'Digite a altura do aluno {x+1}: ')) for x in range(10)]
+maior=max(altura)
+menor=min(altura)
+nome_maior=altura.index(maior)
+nome_menor=altura.index(menor)
+
+print(f'O maior aluno é {nomes[nome_maior]} e mede {maior} m')
+print(f'O menor aluno é {nomes[nome_menor]} e mede {menor} m')
+
+#exercício 25 - secao 7/parte1
+vetor=[]
+x=0
+while len(vetor)<100:
+    if x%7==0 or x%10==7:
+        vetor.append(x)
+    x+=1
+
+print(vetor)
+
+#exercício 28 - secao 7/parte1
+v=[int(input('Digite um valor: ')) for x in range(10)]
+v1=list(filter(lambda x:x%2==0, v))
+v2=list(filter(lambda x:x%2!=0, v))
+print(v1)
+print(v2)
+
+#exercício 33 - secao 7/parte1
+print(list(filter(lambda x: x!=0, [int(input('Digite um valor: ')) for x in range(15)])))
+
+#exercício 34 - secao 7/parte1
+vetor=[]
+for x in range(10):
+    valor=int(input('Digite um valor: '))
+    while valor in vetor:
+        valor=int(input('O numero escolhido já estar no vetor, favor escolher outro valor: '))
+    vetor.append(valor)
+print(vetor)
+
+#exercício 38 - secao 7/parte1
+vetor=[]
+for x in range(10):
+    vetor.append(int(input('Digite um valor: ')))
+    vetor.sort()
+    print(vetor)
+
+#exercicio 1 -secao 7/parte2
+z=0
+matriz=[[int(input(f'[{linha+1}][{coluna+1}]: ')) for x in range(4)] for linha in range(4)]
+for linha in matriz:
+    for valor in linha:
+        if valor>10:
+            z+=1
+print(z)
+
+#exercicio 2 -secao 7/parte2
+matriz=[[1 if x==y else 0 for x in range(5)] for y in range(5)]
+print(matriz)
+
+#exercicio 3 - secao 7/parte 2
+matriz=[[linha*coluna for coluna in range(1,5)] for linha in range(1,5)]
+for linha in range(4):
+    for coluna in range(4):
+        print(matriz[linha][coluna], end=' ')
+    print()
+
+#exercicio 4 - secao 7/parte 2
+linha=0
+coluna=0
+matriz=[[int(input(f'[{linha+1}][{coluna+1}]: ')) for coluna in range(4)] for linha in range(4)]
+maior=matriz[0][0]
+
+for linha in range(4):
+    for coluna in range(4):
+        if matriz[linha][coluna]>maior:
+            l=linha
+            c=coluna
+            maior=matriz[l][c]
+
+print(f'[{l+1}][{c+1}]: {maior}')
+print(matriz)
+
+#exercicio 5 - secao 7/parte 2
+matriz=[[int(input(f'[{linha+1}][{coluna+1}]: ')) for coluna in range(5)] for linha in range(5)]
+valor=int(input('Digite o valor procurado: '))
+lista=[]
+
+for linha in range(5):
+    for coluna in range(5):
+        if matriz[linha][coluna]==valor:
+            print(f'Valor encontrado em [{linha+1}][{coluna+1}]')
+            lista.append((linha,coluna))
+
+if len(lista)==0:
+    print('Valor não encontrado')
+
+#exercicio 6 - secao 7/parte 2
+matriz1=[[int(input(f'[{linha+1}][{coluna+1}]: ')) for coluna in range(4)] for linha in range(4)]
+matriz2=[[int(input(f'[{linha+1}][{coluna+1}]: ')) for coluna in range(4)] for linha in range(4)]
+matriz3=[[0 for coluna in range(4)] for linha in range(4)]
+
+for linha in range(4):
+    for coluna in range(4):
+        if matriz1[linha][coluna]>matriz2[linha][coluna]:
+            matriz3[linha][coluna]=matriz1[linha][coluna]
+        else:
+            matriz3[linha][coluna]=matriz2[linha][coluna]
+
+print(matriz1)
+print(matriz2)
+print(matriz3)
+
+#exercicio 8 - secao 7/parte 2
+matriz=[[int(input(f'[{linha+1}][{coluna+1}]:')) for coluna in range(3)] for linha in range(3)]
+soma=0
+
+for linha in range(3):
+    for coluna in range(3):
+        if coluna>linha:
+            soma=soma+matriz[linha][coluna]
+
+print(f'soma dos elementos acima da diagonal principal: {soma})
+
+#exercicio 9 - secao 7/parte 2
+matriz=[[int(input(f'[{linha+1}][{coluna+1}]:')) for coluna in range(3)] for linha in range(3)]
+soma=0
+
+for linha in range(3):
+    for coluna in range(3):
+        if coluna<linha:
+            soma=soma+matriz[linha][coluna]
+
+print(f'soma dos elementos abaixo da diagonal principal: {soma})
+
+#exercicio 10 - secao 7/parte 2
+matriz=[[int(input(f'[{linha+1}][{coluna+1}]:')) for coluna in range(3)] for linha in range(3)]
+soma=0
+
+for linha in range(3):
+    for coluna in range(3):
+        if coluna=linha:
+            soma=soma+matriz[linha][coluna]
+
+print(f'soma dos elementos na diagonal principal: {soma})
+
+#exercicio 13 - secao 7/parte 2
+import copy
+matriz=[]
+matriz2=[]
+for linha in range(4):
+    vetor=[]
+    for coluna in range(4):
+        vetor.append(int(input(f'[{linha+1}][{coluna+1}]: ')))
+        while vetor[coluna] not in range(1,21):
+            vetor[coluna]=int(input(f'o valor precisa estar no intervalo [1,20]: '))
+    matriz.append(vetor)
+
+matriz2=copy.deepcopy(matriz)
+for linha in range(4):
+    for coluna in range(4):
+        if coluna>linha:
+            matriz2[linha][coluna]=0
+
+print(matriz)
+print(matriz2)
+
+#exercício 1 - módulo 8
+dobro=lambda x: x**2
+print(dobro(int(input('Digite um valor: '))))
+
+#exercício 2 - módulo 4
+def transformar(*mes):
+    ano=('janeiro','fevereiro','março','abril','maio','junho',
+         'julho','agosto','setembro','outubro','novembro','dezembro')
+    return ano[mes[1]-1]
+
+x=input('Digite uma data separada por (/): ')
+data=x.split('/')
+data=[int(x) for x in data]
+print(f'{data[0]} de {transformar(*data)} de {data[2]}')
+
+#exercício 3 - módulo 4
+def valor(y):
+    if y>0:
+        return 1
+    if y<0:
+        return -1
+    if y==0:
+        return 0
+
+x=int(input('Digite um valor: '))
+print(valor(x))
+
+#exercício 4 - módulo 8
+def quadrado(x):
+    y=int(x**(1/2))
+    x=x**(1/2)
+    if x==y:
+        print('É quadrado perfeito')
+    else:
+        print('Não é quadrado perfeito')
+
+valor=float(input('Digite um valor: '))
+quadrado(valor)
+"""
+
+
